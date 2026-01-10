@@ -8,7 +8,7 @@ public class ZombieMovement : MonoBehaviour
     public int maximumXPosition = -13;
     public int minimumXPosition = -30;
 
-    private void FixedUpdate()
+    private void Movement()
     {
         //if (transform.position.x <= -30 || transform.position.x >= -13)
         //{
