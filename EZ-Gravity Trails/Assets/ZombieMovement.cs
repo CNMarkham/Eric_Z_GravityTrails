@@ -4,43 +4,36 @@ using UnityEngine;
 
 public class ZombieMovement : MonoBehaviour
 {
+    public float thrust = 20f;
     public float speed;
-    public int maximumXPosition = -13;
-    public int minimumXPosition = -30;
+    public GameObject target1, target2;
+    Rigidbody2D rb;
+    bool move = true;
 
-    private void Movement()
+    private void Start()
     {
-        //if (transform.position.x <= -30 || transform.position.x >= -13)
-        //{
-        //speed *= -1;
-        //Vector2 newDirection = transform.localScale;
-        //newDirection.x *= -1;
-        //transform.localScale = new Vector3(newDirection.x, newDirection.y, 0);
-        //}
-
-
-        while (true)
+        GetComponent<Rigidbody2D>();
+        //Movement();
+    }
+    private void FixedUpdate()
+    {
+        if ((transform.position.x <= target1.transform.position.x) || (transform.position.x >= target2.transform.position.x))
         {
-            for (int i = 0; i < 20; i++)
-            {
-                float newXPosition = transform.position.x + speed * Time.fixedDeltaTime;
-                float newYPosition = transform.position.y;
-                Vector2 newPosition = new Vector2(newXPosition, newYPosition);
-                transform.position = newPosition;
-            }
-
             speed *= -1;
-            Vector2 newDirection = transform.localScale;
-            newDirection.x *= -1;
-            transform.localScale = new Vector3(newDirection.x, newDirection.y, 0);
-
-            for (int i = 0; i < 20; i++)
+            Vector3 newDirection = transform.localScale;
+            if (speed < 0)
             {
-                float newXPosition = transform.position.x + speed * Time.fixedDeltaTime;
-                float newYPosition = transform.position.y;
-                Vector2 newPosition = new Vector2(newXPosition, newYPosition);
-                transform.position = newPosition;
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
+        float newXPosition = transform.position.x + speed * Time.fixedDeltaTime;
+            float newYPosition = transform.position.y;
+            Vector2 newPosition = new Vector2(newXPosition, newYPosition);
+            transform.position = newPosition;
     }
+    
 }

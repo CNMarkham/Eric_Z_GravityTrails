@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -69,6 +70,20 @@ public class Movement : MonoBehaviour
         Vector3 movement = new Vector3(horizontal, vertical);
 
         transform.position += movement * Time.deltaTime * speed;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Zombie"))
+        {
+            StartCoroutine(reloadScene());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+            
+    }
+
+    private IEnumerator reloadScene()
+    {
+        yield return new WaitForSeconds(1.1f);
     }
 
 }
