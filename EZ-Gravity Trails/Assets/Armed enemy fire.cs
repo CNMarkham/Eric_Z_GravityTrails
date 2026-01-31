@@ -7,36 +7,64 @@ public class Armedenemyfire : MonoBehaviour
     public Transform ObjectA;
     public Transform ObjectB;
     public Transform target;
+
+    float lastShot = 0f;
+    float delayBetweenShots = 0.5f;
     
     public GameObject bullet;
+    public GameObject barrel;
 
     public float distance;
-    public float speed = 10;
+    public float speed = 1000f;
 
+
+
+    private void Start()
+    {
+        lastShot = Time.time;
+    }
     void WithinDistance()
     {
-        Instantiate(bullet, transform.position, Quaternion.identity);
+        
+        if (Time.time - lastShot >= delayBetweenShots)
+        {
+            Instantiate(bullet, barrel.transform.position, Quaternion.identity);
+        }
+        lastShot = Time.time;
     }
+
+    void CheckDistance()
+    {
+        if (distance < 10f)
+        {
+            WithinDistance();
+        }
+
+    }
+
+    //IEnumerator CallCheck()
+    //{
+        // return new WaitForSeconds(2f);
+       // CheckDistance();
+    //}
 
     void Update()
     {
         if (ObjectA != null && ObjectB != null)
         {
             distance = Vector3.Distance(ObjectA.position, ObjectB.position);
-
-            if (distance < 10f)
-            {
-                //Debug.Log("you are within enemy sight");
-                Invoke(nameof(WithinDistance), 2f);
-            }
         }
+        CheckDistance();
+        //StartCoroutine(CallCheck());
+
     }
 
-    //private void FixedUpdate()
-    //{
-        //bullet.transform.position = Vector2.MoveTowards(
-            //transform.position,
-            //target.position,
-            //speed * Time.deltaTime);
-    //}
+    private void FixedUpdate()
+    {
+        if (target != null)
+        {
+            float step = speed * Time.deltaTime;
+            bullet.transform.position = Vector2.MoveTowards(transform.position, target.transform.position, step);
+        }
+    }
 }
