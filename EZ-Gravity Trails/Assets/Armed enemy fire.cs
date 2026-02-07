@@ -13,9 +13,11 @@ public class Armedenemyfire : MonoBehaviour
     
     public GameObject bullet;
     public GameObject barrel;
+    public GameObject flash;
+    public ParticleSystem effect;
 
     public float distance;
-    public float speed = 1000f;
+    public float speed = -10f;
 
 
 
@@ -29,6 +31,9 @@ public class Armedenemyfire : MonoBehaviour
         if (Time.time - lastShot >= delayBetweenShots)
         {
             Instantiate(bullet, barrel.transform.position, Quaternion.identity);
+            Instantiate(flash, barrel.transform.position, Quaternion.identity);
+            Instantiate(effect, barrel.transform.position, barrel.transform.rotation);
+            effect.Play();
         }
         lastShot = Time.time;
     }
@@ -61,10 +66,11 @@ public class Armedenemyfire : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (target != null)
-        {
-            float step = speed * Time.deltaTime;
-            bullet.transform.position = Vector2.MoveTowards(transform.position, target.transform.position, step);
-        }
+        //if (target != null)
+        //{
+        //float step = speed * Time.deltaTime;
+        //bullet.transform.position = Vector2.MoveTowards(transform.position, target.transform.position, step);
+        //}
+        
     }
 }

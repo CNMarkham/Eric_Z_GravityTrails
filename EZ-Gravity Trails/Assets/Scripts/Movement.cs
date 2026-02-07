@@ -78,7 +78,12 @@ public class Movement : MonoBehaviour
             StartCoroutine(reloadScene());
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-            
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            StartCoroutine(reloadScene());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
     }
 
     private IEnumerator reloadScene()

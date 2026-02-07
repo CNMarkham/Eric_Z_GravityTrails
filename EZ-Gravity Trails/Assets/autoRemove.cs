@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class autoRemove : MonoBehaviour
 {
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = true;
         StartCoroutine(enableCollider());
         StartCoroutine(SelfDestruct());
     }
@@ -21,8 +22,14 @@ public class autoRemove : MonoBehaviour
 
     IEnumerator enableCollider()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         GetComponent<BoxCollider2D>().enabled = true;
     }
-
+    private void FixedUpdate()
+    {
+        float newXPosition = transform.position.x + speed * Time.fixedDeltaTime;
+        float newYPosition = transform.position.y;
+        Vector2 newPosition = new Vector2(newXPosition, newYPosition);
+        transform.position = newPosition;
+    }
 }
