@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class autoRemove : MonoBehaviour
 {
+    public Movement AvatarY;
+    public float heightDifference;
     public float speed;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,9 @@ public class autoRemove : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        heightDifference = AvatarY.Ypos - transform.position.y;
+        Debug.Log(heightDifference);
+
         float newXPosition = transform.position.x + speed * Time.fixedDeltaTime;
         float newYPosition = transform.position.y;
         Vector2 newPosition = new Vector2(newXPosition, newYPosition);

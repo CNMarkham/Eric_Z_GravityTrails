@@ -9,7 +9,7 @@ public class Armedenemyfire : MonoBehaviour
     public Transform target;
 
     float lastShot = 0f;
-    float delayBetweenShots = 0.5f;
+    float delayBetweenShots = 2f;
     
     public GameObject bullet;
     public GameObject barrel;
@@ -17,7 +17,7 @@ public class Armedenemyfire : MonoBehaviour
     public ParticleSystem effect;
 
     public float distance;
-    public float speed = -10f;
+    public float speed = 0f;
 
 
 
@@ -27,31 +27,21 @@ public class Armedenemyfire : MonoBehaviour
     }
     void WithinDistance()
     {
-        
         if (Time.time - lastShot >= delayBetweenShots)
         {
             Instantiate(bullet, barrel.transform.position, Quaternion.identity);
             Instantiate(flash, barrel.transform.position, Quaternion.identity);
             Instantiate(effect, barrel.transform.position, barrel.transform.rotation);
             effect.Play();
+            lastShot = Time.time;
         }
-        lastShot = Time.time;
     }
 
-    void CheckDistance()
+    private IEnumerator CallCheck()
     {
-        if (distance < 10f)
-        {
-            WithinDistance();
-        }
-
+        yield return new WaitForSeconds(1f);
+        WithinDistance();
     }
-
-    //IEnumerator CallCheck()
-    //{
-        // return new WaitForSeconds(2f);
-       // CheckDistance();
-    //}
 
     void Update()
     {
@@ -59,18 +49,20 @@ public class Armedenemyfire : MonoBehaviour
         {
             distance = Vector3.Distance(ObjectA.position, ObjectB.position);
         }
-        CheckDistance();
-        //StartCoroutine(CallCheck());
+        //CheckDistance();
+        if (distance < 10f)
+        {
+            StartCoroutine(CallCheck());
+        }
 
     }
 
     private void FixedUpdate()
     {
-        //if (target != null)
-        //{
-        //float step = speed * Time.deltaTime;
-        //bullet.transform.position = Vector2.MoveTowards(transform.position, target.transform.position, step);
-        //}
+       
+        float step = speed * Time.deltaTime;
+
+        bullet.transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
         
     }
 }

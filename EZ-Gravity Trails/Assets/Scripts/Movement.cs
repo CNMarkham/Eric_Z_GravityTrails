@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
-
 public class Movement : MonoBehaviour
 {
 
     [Header("Movement")]
     [Tooltip("Speed of movement")]
     public float speed;
+    public float Ypos;
     public enum MovementType
     {
         AllDirections,
@@ -39,6 +39,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Ypos = transform.position.y;
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
@@ -71,25 +72,7 @@ public class Movement : MonoBehaviour
 
         transform.position += movement * Time.deltaTime * speed;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Zombie"))
-        {
-            StartCoroutine(reloadScene());
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            StartCoroutine(reloadScene());
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-
-    }
-
-    private IEnumerator reloadScene()
-    {
-        yield return new WaitForSeconds(1.1f);
-    }
+    
 
 }
 
