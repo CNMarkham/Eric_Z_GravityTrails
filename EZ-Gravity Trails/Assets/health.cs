@@ -27,10 +27,10 @@ public class health : MonoBehaviour
     }
     private IEnumerator SlowDeath()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 100; i++)
         {
-            yield return new WaitForSeconds(0.3f);
-            hp = hp - 10;
+            yield return new WaitForSeconds(0.1f);
+            hp = hp - 2;
         }
     }
 
