@@ -6,13 +6,21 @@ public class autoRemove : MonoBehaviour
 {
     public Movement AvatarY;
     public float heightDifference;
-    public float bulletSpeed;
-
-    public Transform target;
+    public float bulletSpeed = 100f;
 
     public float speed = 1000f;
 
     public Rigidbody2D rb;
+    public ParticleSystem Hiteffect;
+    public GameObject EffectReference;
+
+    public Transform target;
+    public float enemyAimSpeed = 50000f;
+    Quaternion newRotation;
+    float orientTransform;
+    float orientTarget;
+
+    Quaternion bullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,20 +30,7 @@ public class autoRemove : MonoBehaviour
         StartCoroutine(enableCollider());
         StartCoroutine(SelfDestruct());
 
-        for (int i = 0; i < 100; i++)
-        {
-            Vector2 targetDirection = target.position - transform.position;
-
-            targetDirection.Normalize();
-
-            float singleStep = speed * Time.deltaTime;
-
-            float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
-
-            float newRotation = Mathf.LerpAngle(transform.eulerAngles.z, angle, singleStep);
-
-            transform.rotation = Quaternion.Euler(0, 0, newRotation);
-        }
+        bullet = transform.rotation; 
         
     }
 
@@ -48,17 +43,30 @@ public class autoRemove : MonoBehaviour
 
     IEnumerator enableCollider()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         GetComponent<BoxCollider2D>().enabled = true;
     }
+
     private void FixedUpdate()
     {
-        //float newXPosition = transform.position.x + bulletSpeed * Time.fixedDeltaTime;
-        //float newYPosition = transform.position.y;
-        //Vector2 newPosition = new Vector2(newXPosition, newYPosition);
-        //transform.position = newPosition;
 
-        rb.velocity = transform.forward * bulletSpeed * Time.deltaTime * 1000;
+        rb.velocity = transform.right * bulletSpeed;
+
+
+        if(transform.rotation != bullet)
+        {
+            transform.rotation = bullet;
+        }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Surfaces"))
+        {
+            Destroy(gameObject);
+            Instantiate(Hiteffect, transform.position, EffectReference.transform.rotation);
+            Hiteffect.Play();
+        }
     }
 }

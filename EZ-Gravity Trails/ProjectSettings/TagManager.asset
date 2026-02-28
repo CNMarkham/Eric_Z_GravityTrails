@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - ThrowingObject
   - Bullet
+  - Surfaces
   layers:
   - Default
   - TransparentFX
