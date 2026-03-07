@@ -9,6 +9,7 @@ TagManager:
   - ThrowingObject
   - Bullet
   - Surfaces
+  - Collectable
   layers:
   - Default
   - TransparentFX

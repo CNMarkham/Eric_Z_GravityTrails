@@ -10,6 +10,7 @@ public class EnemyShooting : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject flash;
     public ParticleSystem effect;
+    public GameObject flashLight;
 
     public float FireRate = 3.0f;
     public float NextFire = 3.0f;
@@ -33,7 +34,7 @@ public class EnemyShooting : MonoBehaviour
         {
             NextFire = Time.time + FireRate;
             {
-                if (distance < 12f)
+                if (distance < 20f)
                 {
                     Shoot();
                 }
@@ -46,5 +47,6 @@ public class EnemyShooting : MonoBehaviour
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Instantiate(flash, firePoint.transform.position, Quaternion.identity);
         Instantiate(effect, firePoint.transform.position, firePoint.transform.rotation);
+        Instantiate(flashLight, firePoint.transform.position, firePoint.transform.rotation);
     }
 }

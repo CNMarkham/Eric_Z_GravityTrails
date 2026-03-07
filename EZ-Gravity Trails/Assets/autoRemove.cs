@@ -68,5 +68,10 @@ public class autoRemove : MonoBehaviour
             Instantiate(Hiteffect, transform.position, EffectReference.transform.rotation);
             Hiteffect.Play();
         }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
