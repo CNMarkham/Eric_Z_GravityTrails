@@ -9,6 +9,7 @@ public class SoldierMovement : MonoBehaviour
     public GameObject target1, target2;
     Rigidbody2D rb;
     bool move = true;
+    public float gunRotation = 1;
     // Start is called before the first frame update
     private void Start()
     {
@@ -22,6 +23,7 @@ public class SoldierMovement : MonoBehaviour
         if ((transform.position.x <= target1.transform.position.x) || (transform.position.x >= target2.transform.position.x))
         {
             speed *= -1;
+            gunRotation *= -1;
             Vector3 newDirection = transform.localScale;
             if (speed < 0)
             {
