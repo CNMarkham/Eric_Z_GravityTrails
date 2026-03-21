@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8877346085010577088}
   - component: {fileID: 1649097886223292253}
   - component: {fileID: 2498036101460244634}
-  - component: {fileID: 5610967535203979327}
   m_Layer: 0
   m_Name: shuriken
   m_TagString: Collectable
@@ -131,17 +130,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6860943, y: 0.60009575}
   m_EdgeRadius: 0
---- !u!114 &5610967535203979327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5410662854832023500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63a699dd14f57764eacaa1c58c284608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {fileID: 0}
-  speed: 0

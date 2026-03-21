@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - Surfaces
   - Collectable
+  - projectile
   layers:
   - Default
   - TransparentFX

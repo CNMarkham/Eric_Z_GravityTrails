@@ -19,23 +19,11 @@ public class PointScript2 : MonoBehaviour
 
     void Update()
     {
-        if (transform.rotation.z <= 90)
-        {
-            Vector2 newDirection = transform.localScale;
-            newDirection.y = 1;
-            transform.localScale = new Vector3(newDirection.x, newDirection.y, 0);
-        }
-        else if (transform.rotation.z >= 90)
-        {
-            Vector2 newDirection = transform.localScale;
-            newDirection.y = -1;
-            transform.localScale = new Vector3(newDirection.x, newDirection.y, 0);
-        }
 
         orientTransform = transform.position.x;
         orientTarget = target.position.x;
 
-        Vector3 direction = target.position - transform.position;
+        Vector2 direction = target.position - transform.position;
 
         if(orientTransform > orientTarget)
         {
@@ -49,9 +37,9 @@ public class PointScript2 : MonoBehaviour
         newRotation.x = 0.0f;
         newRotation.y = 0.0f;
 
-        Vector3 angles = newRotation.eulerAngles;
+        Vector2 angles = newRotation.eulerAngles;
 
-        angles.x = Mathf.Clamp(angles.x, -40f, 40f);
+        angles.x = 0f;
         angles.y = 0f;
 
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * enemyAimSpeed);
