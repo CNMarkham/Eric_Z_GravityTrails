@@ -145,13 +145,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AvatarY: {fileID: 919825731887471114, guid: 808b89f9746b7b7498a3a88b37ef5221, type: 3}
   heightDifference: 0
-  bulletSpeed: 150
+  bulletSpeed: 100
   speed: -150
   rb: {fileID: -4233476552842864711}
   Hiteffect: {fileID: 1691183917797321751, guid: 8137f788d33af514f9833dee0e137bc7, type: 3}
   EffectReference: {fileID: 111977607678726856, guid: 5b2adafa6ff9bb048839fb57156e06d5, type: 3}
   target: {fileID: 919825731887471158, guid: d230b346aa66a9a4bbf3d79741287643, type: 3}
-  enemyAimSpeed: 1000
+  enemyAimSpeed: 10000
 --- !u!50 &-4233476552842864711
 Rigidbody2D:
   serializedVersion: 4

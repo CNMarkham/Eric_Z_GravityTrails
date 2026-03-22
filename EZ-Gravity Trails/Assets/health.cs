@@ -33,16 +33,16 @@ public class health : MonoBehaviour
             hp = hp - 2;
         }
     }
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Zombie"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             StartCoroutine(SlowDeath());
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            hp = hp - 70;
+            hp = hp - 1;
         }
 
     }

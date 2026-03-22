@@ -1,12 +1,15 @@
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Throwable : MonoBehaviour
 {
+    public Text collectableCounter;
     public GameObject objectThrown;
     public Vector3 offset;
-    public int throwableCounter;
+    public int throwableCounter = 1;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class Throwable : MonoBehaviour
                 Vector3 throwablePosition = transform.position + offset;
                 Instantiate(objectThrown, throwablePosition, transform.rotation);
                 throwableCounter = throwableCounter -= 1;
+                collectableCounter.text = throwableCounter.ToString();
             }
         }
     }
@@ -33,6 +37,7 @@ public class Throwable : MonoBehaviour
         if (collision.gameObject.CompareTag("Collectable"))
         {
             throwableCounter = throwableCounter += 1;
+            collectableCounter.text = throwableCounter.ToString();
             Destroy(collision.gameObject);
         }
     }

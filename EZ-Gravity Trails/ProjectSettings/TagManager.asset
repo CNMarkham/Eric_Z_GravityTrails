@@ -11,6 +11,7 @@ TagManager:
   - Surfaces
   - Collectable
   - projectile
+  - Exit
   layers:
   - Default
   - TransparentFX
