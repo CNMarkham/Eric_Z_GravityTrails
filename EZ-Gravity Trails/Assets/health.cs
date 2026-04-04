@@ -24,6 +24,12 @@ public class health : MonoBehaviour
             StartCoroutine(ReloadScene());
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartCoroutine(ReloadScene());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
     private IEnumerator SlowDeath()
     {
@@ -31,6 +37,21 @@ public class health : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
             hp = hp - 2;
+        }
+    }
+
+    private IEnumerator Shot()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            yield return new WaitForSeconds(0.01f);
+            hp = hp - 20;
+        }
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < 20; i++)
+        {
+            yield return new WaitForSeconds(0.4f);
+            hp = hp - 1;
         }
     }
     
@@ -42,7 +63,7 @@ public class health : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            hp = hp - 1;
+            StartCoroutine(Shot());
         }
 
     }

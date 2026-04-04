@@ -36,7 +36,7 @@ public class Throwable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collectable"))
         {
-            throwableCounter = throwableCounter += 1;
+            throwableCounter = throwableCounter += 1000;
             collectableCounter.text = throwableCounter.ToString();
             Destroy(collision.gameObject);
         }

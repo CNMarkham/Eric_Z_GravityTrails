@@ -68,11 +68,19 @@ public class Movement : MonoBehaviour
                 break;
         }
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                speed = masterSpeed * 3;
+            }
+        }
+
+        
+
         Vector3 movement = new Vector3(horizontal, vertical);
 
         transform.position += movement * Time.deltaTime * speed;
     }
-    
-
 }
 

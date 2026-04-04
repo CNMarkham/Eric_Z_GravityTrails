@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         direction = GameObject.FindGameObjectWithTag("Player").GetComponent<Throwable>();
-        Invoke(nameof(DestroyThrowable), 1.5f);
+        Invoke(nameof(DestroyThrowable), 1f);
     }
 
     // Update is called once per frame

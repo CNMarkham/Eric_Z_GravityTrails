@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1649097886223292253}
   - component: {fileID: 2498036101460244634}
   - component: {fileID: 5610967535203979327}
+  - component: {fileID: 8711184356204675332}
   m_Layer: 0
   m_Name: Throwable
   m_TagString: projectile
@@ -118,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0020608902, y: 0.0015363693}
+  m_Offset: {x: 0.0020608902, y: -0.0004810691}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6860943, y: 0.60009575}
+  m_Size: {x: 0.6860943, y: 0.62958527}
   m_EdgeRadius: 0
 --- !u!114 &5610967535203979327
 MonoBehaviour:
@@ -145,3 +146,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rotationAmount: {x: 0, y: 0, z: -12}
+--- !u!50 &8711184356204675332
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5410662854832023500}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 10
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

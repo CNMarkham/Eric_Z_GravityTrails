@@ -1263,7 +1263,7 @@ Transform:
   m_GameObject: {fileID: 325982341}
   serializedVersion: 2
   m_LocalRotation: {x: -0.040755264, y: -0.04584877, z: 0.0018718427, w: -0.9981149}
-  m_LocalPosition: {x: 11.71, y: 8, z: -12.179}
+  m_LocalPosition: {x: -29.81, y: 8, z: -12.179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2264,8 +2264,8 @@ MonoBehaviour:
   flash: {fileID: 5124733547223196768, guid: c45b6f1c7163c5a4a91b41debc6ebfe8, type: 3}
   effect: {fileID: 19222736918478029, guid: 13d247d1b09b3054791ba37059e6d41e, type: 3}
   flashLight: {fileID: 6772146300611924732, guid: 8f0349bc9915173468d7701aebb2d2bb, type: 3}
-  FireRate: 0.01
-  NextFire: 1.5
+  FireRate: 2
+  NextFire: 3
   timeToDisappear: 5
   distance: 0
 --- !u!95 &599867010
@@ -3516,7 +3516,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0.04075527, y: -0.045848772, z: 0.0018718428, w: -0.99811494}
-  m_LocalPosition: {x: 11.703576, y: 3.5289288, z: -12.179}
+  m_LocalPosition: {x: -21.503992, y: 3.567596, z: -12.179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7278,7 +7278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919825731887471158, guid: 808b89f9746b7b7498a3a88b37ef5221, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.71
+      value: -29.81
       objectReference: {fileID: 0}
     - target: {fileID: 919825731887471158, guid: 808b89f9746b7b7498a3a88b37ef5221, type: 3}
       propertyPath: m_LocalPosition.y
