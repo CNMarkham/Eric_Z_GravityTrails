@@ -18,6 +18,7 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         transform.position += direction.offset * Time.deltaTime * speed;
+
         for (int i = 0; i < 100; i++)
         {
             transform.Rotate(rotationAmount * Time.deltaTime);

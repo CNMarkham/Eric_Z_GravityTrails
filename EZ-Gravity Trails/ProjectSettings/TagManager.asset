@@ -12,6 +12,7 @@ TagManager:
   - Collectable
   - projectile
   - Exit
+  - Neutral
   layers:
   - Default
   - TransparentFX

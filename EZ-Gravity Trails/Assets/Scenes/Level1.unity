@@ -1075,6 +1075,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214257855}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &257157824 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 919825732495704862, guid: 808b89f9746b7b7498a3a88b37ef5221, type: 3}
+  m_PrefabInstance: {fileID: 2130976477}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &276852591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1263,7 +1268,7 @@ Transform:
   m_GameObject: {fileID: 325982341}
   serializedVersion: 2
   m_LocalRotation: {x: -0.040755264, y: -0.04584877, z: 0.0018718427, w: -0.9981149}
-  m_LocalPosition: {x: -29.81, y: 8, z: -12.179}
+  m_LocalPosition: {x: -29.83, y: 8, z: -12.179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1467,9 +1472,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 930704722623233520, guid: ef69373dc9094064d91dce671ca6fcd4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 599867000}
-    - targetCorrespondingSourceObject: {fileID: 930704722623233520, guid: ef69373dc9094064d91dce671ca6fcd4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 599867001}
     - targetCorrespondingSourceObject: {fileID: 930704722623233520, guid: ef69373dc9094064d91dce671ca6fcd4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 599867005}
@@ -2220,31 +2222,10 @@ MonoBehaviour:
   ObjectB: {fileID: 118199744}
   distance: 0
   thrust: 20
-  speed: -1.5
+  speed: 1.5
   target1: {fileID: 1960898103}
   target2: {fileID: 285277254}
   gunRotation: 1
---- !u!114 &599867001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599866995}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4a601c26c62f64b9ea87433c8e97da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectA: {fileID: 599866999}
-  ObjectB: {fileID: 118199744}
-  target: {fileID: 118199744}
-  bullet: {fileID: 3521674507397958566, guid: 8ab95f1048000a5428558734123ca24f, type: 3}
-  barrel: {fileID: 1760226378}
-  flash: {fileID: 5124733547223196768, guid: c45b6f1c7163c5a4a91b41debc6ebfe8, type: 3}
-  effect: {fileID: 19222736918478029, guid: 13d247d1b09b3054791ba37059e6d41e, type: 3}
-  distance: 0
-  speed: 0
 --- !u!114 &599867005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2919,7 +2900,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.02e-43, y: 5.87e-43, z: 0, w: 7.46305e-31}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 2.4e-44, z: 5.028e-42, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3516,7 +3497,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0.04075527, y: -0.045848772, z: 0.0018718428, w: -0.99811494}
-  m_LocalPosition: {x: -21.503992, y: 3.567596, z: -12.179}
+  m_LocalPosition: {x: -22.566166, y: 3.5689263, z: -12.179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4477,8 +4458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ad38685b54c0e4f95cf5f4d3cb3767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 118199744}
-  enemyAimSpeed: 2
+  target: {fileID: 257157824}
+  enemyAimSpeed: 1.75
 --- !u!1001 &1213782746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5439,7 +5420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 127653398}
-  enemyAimSpeed: 2
+  enemyAimSpeed: 1.75
 --- !u!1 &1545755493
 GameObject:
   m_ObjectHideFlags: 0
@@ -6414,11 +6395,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759775386}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1760226378 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6818740074941718708, guid: 159788e922809c544b29f6c159abe072, type: 3}
-  m_PrefabInstance: {fileID: 5422997197442085879}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1760226379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 398551787579495666, guid: 159788e922809c544b29f6c159abe072, type: 3}
@@ -7278,7 +7254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919825731887471158, guid: 808b89f9746b7b7498a3a88b37ef5221, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.81
+      value: -29.83
       objectReference: {fileID: 0}
     - target: {fileID: 919825731887471158, guid: 808b89f9746b7b7498a3a88b37ef5221, type: 3}
       propertyPath: m_LocalPosition.y

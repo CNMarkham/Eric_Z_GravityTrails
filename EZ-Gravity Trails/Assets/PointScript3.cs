@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointScript2 : MonoBehaviour
+public class PointScript3 : MonoBehaviour
 {
     public Transform target;
     public float enemyAimSpeed = 2.0f;
@@ -25,7 +25,7 @@ public class PointScript2 : MonoBehaviour
 
         Vector2 direction = target.position - transform.position;
 
-        
+
         if (orientTransform > orientTarget)
         {
             newRotation = Quaternion.LookRotation(direction, -Vector3.up);

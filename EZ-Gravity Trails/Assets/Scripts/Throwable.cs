@@ -23,7 +23,7 @@ public class Throwable : MonoBehaviour
         {
             if (throwableCounter >= 1)
             {
-                offset = transform.localScale.x * new Vector3(1, 0, 0);
+                offset = transform.localScale.x * new Vector3(1, 0.1f, 0);
                 Vector3 throwablePosition = transform.position + offset;
                 Instantiate(objectThrown, throwablePosition, transform.rotation);
                 throwableCounter = throwableCounter -= 1;
@@ -36,7 +36,7 @@ public class Throwable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collectable"))
         {
-            throwableCounter = throwableCounter += 1000;
+            throwableCounter = throwableCounter += 1;
             collectableCounter.text = throwableCounter.ToString();
             Destroy(collision.gameObject);
         }

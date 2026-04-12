@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6268413140414973016}
   - component: {fileID: -7889960061638454809}
   - component: {fileID: -8107483588920311061}
-  - component: {fileID: 105060179162420255}
+  - component: {fileID: -5800975988156072686}
   m_Layer: 0
   m_Name: OrdinarySoldier
   m_TagString: Untagged
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &105060179162420255
+--- !u!114 &-5800975988156072686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,6 +168,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 930704722623233520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717b6e6ee4eb07640bef382185b04d8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 16d42a2a3b383e242a8476912934dacf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

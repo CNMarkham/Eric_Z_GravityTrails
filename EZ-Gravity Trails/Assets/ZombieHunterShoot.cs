@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShooting : MonoBehaviour
+public class ZombieHunterShoot : MonoBehaviour
 {
     public Transform ObjectA;
     public Transform ObjectB;
@@ -20,11 +20,11 @@ public class EnemyShooting : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
 
-    void Update() 
+    void Update()
     {
         if (ObjectA != null && ObjectB != null)
         {
@@ -38,7 +38,10 @@ public class EnemyShooting : MonoBehaviour
             {
                 if (distance < 10f)
                 {
-                    Shoot();
+                    if (ObjectB != null)
+                    {
+                        Shoot();
+                    }
                 }
             }
         }
