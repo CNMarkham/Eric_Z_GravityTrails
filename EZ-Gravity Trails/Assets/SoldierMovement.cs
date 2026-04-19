@@ -26,7 +26,7 @@ public class SoldierMovement : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        animator.SetFloat("Distance", distance);
+        //animator.SetFloat("Distance", distance);
 
         if (ObjectA != null && ObjectB != null)
         {

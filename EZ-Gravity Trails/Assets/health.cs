@@ -54,6 +54,16 @@ public class health : MonoBehaviour
             hp = hp - 1;
         }
     }
+
+    private IEnumerator Exploded()
+    {
+        hp = hp - 96;
+        for (int i = 0; i < 20; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            hp = hp - 1;
+        }
+    }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -65,6 +75,9 @@ public class health : MonoBehaviour
         {
             StartCoroutine(Shot());
         }
-
+        if (collision.gameObject.CompareTag("Landmine"))
+        {
+            StartCoroutine(Exploded());
+        }
     }
 }

@@ -18,7 +18,7 @@ public class ArmedEnemyHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("projectile"))
+        if (collision.gameObject.CompareTag("projectile") || collision.gameObject.CompareTag("explosion"))
         {
 
             Destroy(collision.gameObject);

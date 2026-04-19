@@ -13,6 +13,8 @@ TagManager:
   - projectile
   - Exit
   - Neutral
+  - explosion
+  - Landmine
   layers:
   - Default
   - TransparentFX

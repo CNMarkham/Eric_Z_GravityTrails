@@ -19,30 +19,33 @@ public class PointScript3 : MonoBehaviour
 
     void Update()
     {
-
-        orientTransform = transform.position.x;
-        orientTarget = target.position.x;
-
-        Vector2 direction = target.position - transform.position;
-
-
-        if (orientTransform > orientTarget)
+        if (target != null)
         {
-            newRotation = Quaternion.LookRotation(direction, -Vector3.up);
+            orientTransform = transform.position.x;
+            orientTarget = target.position.x;
+
+            Vector2 direction = target.position - transform.position;
+
+
+            if (orientTransform > orientTarget)
+            {
+                newRotation = Quaternion.LookRotation(direction, -Vector3.up);
+            }
+            else
+            {
+                newRotation = Quaternion.LookRotation(direction, Vector3.up);
+            }
+
+            newRotation.x = 0.0f;
+            newRotation.y = 0.0f;
+
+            Vector2 angles = newRotation.eulerAngles;
+
+            angles.x = 0f;
+            angles.y = 0f;
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * enemyAimSpeed);
         }
-        else
-        {
-            newRotation = Quaternion.LookRotation(direction, Vector3.up);
-        }
-
-        newRotation.x = 0.0f;
-        newRotation.y = 0.0f;
-
-        Vector2 angles = newRotation.eulerAngles;
-
-        angles.x = 0f;
-        angles.y = 0f;
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * enemyAimSpeed);
+        
     }
 }
