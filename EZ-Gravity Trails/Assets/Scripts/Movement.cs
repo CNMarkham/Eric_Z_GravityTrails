@@ -70,10 +70,9 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            for (int i = 0; i < 100; i++)
-            {
-                speed = masterSpeed * 3;
-            }
+
+            speed = masterSpeed * 100;
+
         }
 
         
