@@ -29,7 +29,8 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Surfaces"))
         {
-            Destroy(gameObject);
+            rotationAmount = new Vector3(0, 0, 0);
+            Invoke(nameof(DestroyThrowable), 0.1f);
         }
     }
 

@@ -9,7 +9,7 @@ public class Teleport : MonoBehaviour
 
     void Start()
     {
-        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("Zombie").Length;
     }
 
     void Update()
@@ -18,7 +18,7 @@ public class Teleport : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("Zombie").Length;
 
         if (collision.gameObject.tag == "Player" && enemyCount == 0)
         {

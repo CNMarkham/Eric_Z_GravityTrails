@@ -15,8 +15,8 @@ public class healthbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hpNormalizedScale = healthscriptRef.hp / 35;
-        Vector2 currentHealth = new Vector2(hpNormalizedScale, 0.2f);
+        hpNormalizedScale = healthscriptRef.hp / 50;
+        Vector2 currentHealth = new Vector2(hpNormalizedScale, 0.1f);
         transform.localScale = currentHealth;
     }
 }

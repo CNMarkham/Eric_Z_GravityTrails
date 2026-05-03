@@ -33,10 +33,15 @@ public class health : MonoBehaviour
             StartCoroutine(ReloadScene());
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
     private IEnumerator SlowDeath()
     {
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 25; i++)
         {
             yield return new WaitForSeconds(0.1f);
             hp = hp - 2;
@@ -70,7 +75,7 @@ public class health : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Zombie"))
         {
             StartCoroutine(SlowDeath());
         }
@@ -91,6 +96,7 @@ public class health : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("HealthPotion"))
         {
+            Destroy(collision.gameObject);
             hp = hp + 50;
         }
     }
