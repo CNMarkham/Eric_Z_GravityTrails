@@ -9,10 +9,11 @@ public class health : MonoBehaviour
     public float shot_damage = 20;
     public float bleed_damage = 1;
     public float explosion_damage = 96;
+    public GameObject buffedBar;
     // Start is called before the first frame update
     void Start()
     {
-        
+        buffedBar.SetActive(false);
     }
     private IEnumerator ReloadScene()
     {
@@ -90,6 +91,7 @@ public class health : MonoBehaviour
         if (collision.gameObject.CompareTag("Vest"))
         {
             Destroy(collision.gameObject);
+            buffedBar.SetActive(true);
             shot_damage = 10;
             bleed_damage = 0.5f;
             explosion_damage = 50;
